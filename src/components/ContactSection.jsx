@@ -7,7 +7,10 @@ import {
   Phone, 
   MessageSquare, 
   ArrowRight,
-  ShieldCheck
+  ShieldCheck,
+  Instagram,
+  Facebook,
+  MessageCircle
 } from 'lucide-react';
 
 export default function ContactSection({ initialService = "" }) {
@@ -63,7 +66,7 @@ export default function ContactSection({ initialService = "" }) {
     const text = encodeURIComponent(
       `Hi NYKS MEDIA!\n\nName: ${formData.name || 'Client'}\nService: ${formData.service}\nBudget: ${formData.budget}\nDetails: ${formData.message || 'I would like to discuss my project.'}`
     );
-    window.open(`https://wa.me/919876543210?text=${text}`, '_blank');
+    window.open(`https://wa.me/919490644434?text=${text}`, '_blank');
   };
 
   return (
@@ -108,7 +111,9 @@ export default function ContactSection({ initialService = "" }) {
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                 <div>
                   <div className="text-[10px] text-slate-400">Phone / WhatsApp</div>
-                  <div className="text-xs font-semibold text-white">+91 98765 43210</div>
+                  <a href="tel:+919490644434" className="text-xs font-semibold text-white hover:text-emerald-300 transition-colors">
+                    +91 9490644434
+                  </a>
                 </div>
               </div>
 
@@ -120,13 +125,36 @@ export default function ContactSection({ initialService = "" }) {
                 </div>
               </div>
 
+              {/* Social Channels */}
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <a
+                  href="https://www.instagram.com/nyks_media_digital"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 p-2.5 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 border border-pink-500/20 text-pink-400 text-xs font-medium transition-all"
+                >
+                  <Instagram className="w-3.5 h-3.5" />
+                  <span className="truncate">@nyks_media_digital</span>
+                </a>
+                <a
+                  href="https://www.facebook.com/nyks_media_digital"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 p-2.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 text-blue-400 text-xs font-medium transition-all"
+                >
+                  <Facebook className="w-3.5 h-3.5" />
+                  <span className="truncate">Facebook</span>
+                </a>
+              </div>
+
               <div className="pt-2">
                 <button
                   type="button"
                   onClick={handleWhatsAppRedirect}
                   className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/30 text-[#25D366] text-xs font-bold transition-all"
                 >
-                  <span>Chat on WhatsApp</span>
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Chat on WhatsApp (+91 9490644434)</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -211,7 +239,7 @@ export default function ContactSection({ initialService = "" }) {
                       <input
                         type="tel"
                         required
-                        placeholder="+91 98765 00000"
+                        placeholder="+91 94906 44434"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded-xl bg-[#08090F] border border-white/[0.1] focus:border-sky-500 text-white text-xs placeholder:text-slate-600 transition-colors"

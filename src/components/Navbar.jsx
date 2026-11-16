@@ -11,7 +11,8 @@ import {
   Radio, 
   Video, 
   ArrowRight,
-  Sparkles
+  Sparkles,
+  MessageCircle
 } from 'lucide-react';
 
 export default function Navbar({ onOpenContact, onOpenAbout }) {
@@ -224,7 +225,18 @@ export default function Navbar({ onOpenContact, onOpenAbout }) {
           </nav>
 
           {/* Right CTA */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
+            <a
+              href="https://wa.me/919490644434"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold text-[#25D366] bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 transition-all shadow-sm"
+              title="Chat with us on WhatsApp (+91 9490644434)"
+            >
+              <MessageCircle className="w-4 h-4 fill-[#25D366] text-[#25D366]" />
+              <span className="hidden xl:inline">WhatsApp</span>
+            </a>
+
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
@@ -318,7 +330,17 @@ export default function Navbar({ onOpenContact, onOpenAbout }) {
                 Contact Us
               </a>
 
-              <div className="pt-4">
+              <div className="pt-4 space-y-2">
+                <a
+                  href="https://wa.me/919490644434"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-[#25D366] bg-[#25D366]/15 border border-[#25D366]/30 shadow-md"
+                >
+                  <MessageCircle className="w-4 h-4 fill-[#25D366] text-[#25D366]" />
+                  <span>Chat on WhatsApp (9490644434)</span>
+                </a>
+
                 <button
                   onClick={() => { setMobileMenuOpen(false); onOpenContact(); }}
                   className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-sky-600 shadow-lg shadow-indigo-600/30"

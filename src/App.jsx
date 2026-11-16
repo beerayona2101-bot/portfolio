@@ -15,6 +15,7 @@ import ContactSection from './components/ContactSection';
 import PreFooterCta from './components/PreFooterCta';
 import Footer from './components/Footer';
 import AboutModal from './components/AboutModal';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import { Layers } from 'lucide-react';
 
 export default function App() {
@@ -121,6 +122,9 @@ export default function App() {
           handleStartProject();
         }}
       />
+
+      {/* Floating Instant WhatsApp Action Button */}
+      <FloatingWhatsApp />
 
     </div>
   );

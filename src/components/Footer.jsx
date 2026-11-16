@@ -53,9 +53,17 @@ export default function Footer({ onOpenAbout, onOpenContact }) {
               Helping businesses build websites and mobile apps, grow with digital marketing, and stream events live on YouTube.
             </p>
 
-            <div className="pt-1 flex items-center gap-1.5 text-xs text-slate-500">
-              <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-              <span>Hyderabad, India</span>
+            <div className="pt-1 flex flex-col gap-1 text-xs text-slate-400">
+              <div className="flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                <span>Hyderabad, India</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <MessageCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <a href="tel:+919490644434" className="hover:text-white transition-colors">
+                  +91 9490644434
+                </a>
+              </div>
             </div>
           </div>
 
@@ -146,29 +154,39 @@ export default function Footer({ onOpenAbout, onOpenContact }) {
             </h4>
             <div className="space-y-2.5">
               <a 
-                href="https://wa.me/919876543210" 
+                href="https://wa.me/919490644434" 
                 target="_blank" 
-                rel="noreferrer" 
-                className="flex items-center gap-2 hover:text-[#25D366] transition-colors"
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 text-slate-300 hover:text-[#25D366] transition-colors"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
-                <span>WhatsApp Chat</span>
+                <span>WhatsApp: 9490644434</span>
+              </a>
+              <a 
+                href="https://www.instagram.com/nyks_media_digital" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 text-slate-300 hover:text-pink-400 transition-colors"
+              >
+                <Instagram className="w-3.5 h-3.5 text-pink-400" />
+                <span>Instagram (@nyks_media_digital)</span>
+              </a>
+              <a 
+                href="https://www.facebook.com/nyks_media_digital" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors"
+              >
+                <Facebook className="w-3.5 h-3.5 text-blue-400" />
+                <span>Facebook (NYKS Media)</span>
               </a>
               <div className="flex items-center gap-2 text-slate-500">
-                <Instagram className="w-3.5 h-3.5 text-pink-400" />
-                <span>Instagram</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-500">
-                <Facebook className="w-3.5 h-3.5 text-blue-400" />
-                <span>Facebook</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-500">
                 <Linkedin className="w-3.5 h-3.5 text-sky-400" />
-                <span>LinkedIn</span>
+                <span>LinkedIn Corporate</span>
               </div>
               <div className="flex items-center gap-2 text-slate-500">
                 <Youtube className="w-3.5 h-3.5 text-red-500" />
-                <span>YouTube</span>
+                <span>YouTube Live Channel</span>
               </div>
             </div>
           </div>
