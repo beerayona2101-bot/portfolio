@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowRight, Code2, Megaphone, Radio, Compass } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Code2, Megaphone, Radio, Compass, Play } from 'lucide-react';
 
 export default function PathSelector({ onSelectPath }) {
   const pathways = [
@@ -10,9 +11,9 @@ export default function PathSelector({ onSelectPath }) {
       desc: "Fast custom websites, management dashboards, ERP/CRM, and cross-platform mobile apps.",
       cta: "Explore Development →",
       target: "#tech-services",
-      color: "border-sky-500/30 hover:border-sky-500/60 bg-sky-500/5",
-      badgeColor: "text-sky-400 bg-sky-500/10 border-sky-500/20",
-      buttonColor: "bg-sky-600 hover:bg-sky-500",
+      color: "border-cyan-500/40 hover:border-cyan-400/80 bg-gradient-to-b from-cyan-950/30 to-[#0A0E1A]",
+      badgeColor: "text-cyan-400 bg-cyan-500/15 border-cyan-500/30",
+      buttonColor: "bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 shadow-cyan-600/30",
       icon: Code2
     },
     {
@@ -22,9 +23,9 @@ export default function PathSelector({ onSelectPath }) {
       desc: "Targeted Meta Ads, Instagram growth, promotional posters, and high-engagement video reels.",
       cta: "Explore Marketing →",
       target: "#digital-services",
-      color: "border-rose-500/30 hover:border-rose-500/60 bg-rose-500/5",
-      badgeColor: "text-rose-400 bg-rose-500/10 border-rose-500/20",
-      buttonColor: "bg-rose-600 hover:bg-rose-500",
+      color: "border-pink-500/40 hover:border-pink-400/80 bg-gradient-to-b from-pink-950/30 to-[#120812]",
+      badgeColor: "text-pink-400 bg-pink-500/15 border-pink-500/30",
+      buttonColor: "bg-gradient-to-r from-pink-600 to-amber-600 hover:from-pink-500 hover:to-amber-500 shadow-pink-600/30",
       icon: Megaphone
     },
     {
@@ -34,9 +35,9 @@ export default function PathSelector({ onSelectPath }) {
       desc: "4K live streaming, hardware ATEM switchers, cinema cameras, and studio sound for events.",
       cta: "Explore Event Media →",
       target: "#live-services",
-      color: "border-emerald-500/30 hover:border-emerald-500/60 bg-emerald-500/5",
-      badgeColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
-      buttonColor: "bg-emerald-600 hover:bg-emerald-500",
+      color: "border-red-500/40 hover:border-red-400/80 bg-gradient-to-b from-red-950/30 to-[#120608]",
+      badgeColor: "text-red-400 bg-red-500/15 border-red-500/30",
+      buttonColor: "bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-500 hover:to-purple-500 shadow-red-600/30",
       icon: Radio
     }
   ];
@@ -52,61 +53,62 @@ export default function PathSelector({ onSelectPath }) {
   };
 
   return (
-    <section className="py-16 bg-[#080910] border-y border-white/[0.06] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-[#080B14] border-y border-white/[0.08] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="text-center max-w-xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.1] text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-            <Compass className="w-3.5 h-3.5 text-indigo-400" />
-            <span>Choose Your Need</span>
+        <div className="text-center max-w-xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-cyan-500/15 via-purple-500/15 to-rose-500/15 border border-white/[0.15] text-xs font-bold text-white uppercase tracking-wider mb-3">
+            <Compass className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Interactive Pathway</span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             What Are You Looking For?
           </h3>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Select your goal to find the right NYKS service.
+          <p className="text-xs sm:text-sm text-slate-300 mt-1.5">
+            Choose your current goal to see how NYKS MEDIA executes it.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {pathways.map((path) => {
             const Icon = path.icon;
             return (
-              <div
+              <motion.div
                 key={path.id}
+                whileHover={{ y: -6, scale: 1.02 }}
                 onClick={() => handleScroll(path.target, path.title)}
-                className={`group rounded-2xl p-6 border transition-all duration-200 cursor-pointer flex flex-col justify-between hover:-translate-y-1 shadow-lg ${path.color}`}
+                className={`group rounded-3xl p-8 border transition-all duration-300 cursor-pointer flex flex-col justify-between shadow-2xl ${path.color}`}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`p-2.5 rounded-xl border ${path.badgeColor}`}>
-                      <Icon className="w-5 h-5" />
+                  <div className="flex items-center justify-between mb-5">
+                    <div className={`p-3.5 rounded-2xl border ${path.badgeColor} shadow-md`}>
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
-                      Quick Path
+                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider bg-white/[0.05] px-2 py-0.5 rounded border border-white/[0.08]">
+                      Pathway
                     </span>
                   </div>
 
-                  <h4 className="text-lg font-bold text-white mb-1 group-hover:text-white">
+                  <h4 className="text-xl font-bold text-white mb-1.5 group-hover:text-white">
                     {path.title}
                   </h4>
 
-                  <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-3">
+                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
                     {path.sub}
                   </div>
 
-                  <p className="text-xs text-slate-300 leading-relaxed mb-5">
+                  <p className="text-xs text-slate-300 leading-relaxed mb-6">
                     {path.desc}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/[0.08]">
-                  <span className={`w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold text-white transition-all shadow-sm ${path.buttonColor}`}>
+                <div className="pt-4 border-t border-white/[0.08]">
+                  <span className={`w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold text-white transition-all shadow-lg ${path.buttonColor}`}>
                     <span>{path.cta}</span>
                   </span>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
